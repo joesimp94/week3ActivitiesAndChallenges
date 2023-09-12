@@ -35,6 +35,8 @@
   border-color: aquamarine;
   padding: 20px 0;
   margin: 20px;
+  width: 150px;
+  height: 100px;
 }
 
 .show {
