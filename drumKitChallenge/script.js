@@ -1,7 +1,7 @@
 const keypresses = document.getElementById("keyboardDrum");
 const mouseclicks = document.getElementById("clickDrum");
 
-let numberOfBtns = document.querySelectorAll(".drumClicks").length;
+let numberOfBtns = document.querySelectorAll(".drumClicks");
 
 document.addEventListener("keypress", function (event) {
   sound(event.key);
@@ -47,20 +47,11 @@ function sound(key) {
   }
 }
 
-// let boom = document.getElementById("boom");
-// let clap = document.getElementById("clap");
-// let hihat = document.getElementById("hihat");
-// let kick = document.getElementById("kick");
-// let openhat = document.getElementById("openhat");
-// let ride = document.getElementById("ride");
-// let snare = document.getElementById("snare");
-// let tink = document.getElementById("tink");
-// let tom = document.getElementById("tom");
-
-for (let i = 0; i < numberOfBtns; i++) {
+for (let i = 0; i < numberOfBtns.length; i++) {
   document.querySelectorAll(".drumClicks")[i];
-  document.addEventListener("click", function () {
-    let buttonSound = this.innerHTML;
-    sound(buttonSound);
+  numberOfBtns[i].addEventListener("click", function () {
+    let buttonSound = numberOfBtns[i].childNodes[1];
+    console.log(buttonSound);
+    buttonSound.play();
   });
 }
